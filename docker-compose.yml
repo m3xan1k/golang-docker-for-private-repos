@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  yourproject:
+    build: .
+    image: yourproject:latest
+    container_name: yourproject_web
+    tty: true
+    volumes:
+      - ./:/code/
+      - ~/.ssh/id_rsa:/root/.ssh/id_rsa
+    env_file:
+      - ./yourproject.env
